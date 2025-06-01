@@ -4,23 +4,20 @@ const teamMembers = [
   {
     id: 1,
     name: "Ankit Kumar Gola",
-    role: "AI/ML Designer",
-    image: "../src/images/me.jpg",
-    bio: "B.Tech CSE",
+    role: "B.Tech CSE",
+    image: "../src/images/me.png",
   },
   {
     id: 2,
-    name: "Bob Smith",
-    role: "Lead Developer",
-    image: "https://i.pravatar.cc/300?img=20",
-    bio: "Bob is the brain behind the code, architecting scalable and efficient solutions.",
+    name: "Daksh Gupta",
+    role: "B.Tech CSE",
+    image: "./src/images/daksh.jpg",
   },
   {
     id: 3,
-    name: "Carol Lee",
-    role: "UX Designer",
-    image: "https://i.pravatar.cc/300?img=30",
-    bio: "Carol crafts user-friendly interfaces with a passion for design and accessibility.",
+    name: "Nishkarsh",
+    role: "B.Tech CSE",
+    image: "./src/images/nish.png",
   },
 ];
 
@@ -147,76 +144,50 @@ export default function Team() {
             })}
           </div>
         </div>
+        
       </main>
 
       {/* Full-width image block */}
 
-      {/* Footer with no gaps outside and full width background */}
-      <footer className="flex-shrink-0 bg-black text-white w-full">
-        <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <footer className="bg-black text-white px-6 py-12 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
           <div>
             <h2 className="text-2xl font-bold mb-4">UrticaScan AI</h2>
             <p className="text-sm text-gray-400">
-              Revolutionizing skin disease detection with AI-powered image analysis.
+               A Deep Learning-Powered System for Accurate Detection, Segmentation, and Stage-Based Treatment Guidance of Dermatographia Urticaria and Related Skin Conditions
             </p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-3">Navigation</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="/" className="hover:text-white">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/predict" className="hover:text-white">
-                  Predict
-                </a>
-              </li>
-              <li>
-                <a href="/team" className="hover:text-white">
-                  Team
-                </a>
-              </li>
+              <li><a href="/" className="hover:text-white">Home</a></li>
+              <li><a href="/about" className="hover:text-white">About</a></li>
+              <li><a href="/predict" className="hover:text-white">Predict</a></li>
+              <li><a href="/team" className="hover:text-white">Team</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-3">Contact</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li>Email: akshraj54325@gmail.com</li>
-              <li>Phone: +91 98765 43210</li>
-              <li>Address: Graphic Era Hill University, Clement Town, Dehradun - 248001</li>
-            </ul>
+            <h3 className="text-lg font-semibold mb-3 space-2 ">Contact</h3>
+            <p className="text-gray-400 text-sm">
+              Email: akshraj54325@gmail.com<br />
+            </p>
+            <p className="text-gray-400 text-sm">
+              Email: nishkarsh.7078@gmail.com<br />
+            </p>
+            <p className="text-gray-400 text-sm">
+              Email: dakshguptadg3@gmail.com<br />
+            </p>
+            <br/>
+            <p className="text-gray-400 text-sm">Address: Graphic Era Hill University, Clement Town, Dehradun - 248001</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Twitter
-                </a>
-              </li>
+              <li><a href="https://in.linkedin.com/in/ankitk247" className="hover:text-white">LinkedIn</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} UrticaScan AI. All rights reserved.
-        </div>
+        <p className="text-center text-gray-500 text-sm mt-10">&copy; 2025 UrticaScan AI. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -1,165 +1,177 @@
+import { motion } from "framer-motion";
 import ImageSlider from "../components/ImageSlider";
+import Steps from "./Steps";
+import Project from "./Project";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-100 min-h-screen font-sans scroll-smooth">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen flex items-center px-6 md:px-20 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
-          
-          {/* LEFT: Text Content */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-6 leading-tight">
-              Welcome to <span className="text-blue-500">UrticaScan AI</span>
+      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-16 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-white to-blue-200 opacity-60 z-0" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full relative z-10">
+
+          {/* Left: Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="space-y-6"
+          >
+            <h1 className="text-5xl md:text-6xl font-extrabold text-blue-800 leading-tight">
+              Diagnose <span className="text-cyan-600">Smartly</span><br /> with UrticaScan AI
             </h1>
-
-            <p className="text-lg text-gray-700 mb-8">
-              An AI-powered solution to detect Dermatographia Urticaria using image classification and segmentation.
-              Instantly upload, detect, and receive treatment guidance — all from your browser.
+            <p className="text-xl text-gray-700 max-w-xl">
+              Cutting-edge AI for detecting Dermatographia Urticaria via deep learning image analysis. Instant insights, precise segmentation, and trusted treatment suggestions.
             </p>
-
             <div className="flex flex-wrap gap-4">
-              <a
-                href="/predict"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+              <motion.a
+                 href="#demo-section"
+                whileHover={{ scale: 1.05 }}
+                className="bg-gradient-to-r from-blue-600 to-sky-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md"
               >
                 Get Started
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="/about"
-                className="text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition"
+                whileHover={{ scale: 1.05 }}
+                className="border border-blue-500 text-blue-600 px-6 py-3 rounded-lg font-semibold"
               >
                 Learn More
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* RIGHT: Hero Image */}
-          <div className="flex justify-center md:justify-end">
-            <img
+          {/* Right: Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="flex justify-center md:justify-end"
+          >
+            <motion.img
               src="/src/images/bg.png"
-              alt="AI skin analysis illustration"
-              className="w-[500px] md:w-[600px] lg:w-[600px] xl:w-[700px] transition-all duration-300"
+              alt="AI Skin Analysis"
+              className="w-[500px] md:w-[600px] xl:w-[700px] rounded-3xl "
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
-      {/* Slider Component */}
-      <ImageSlider />
+      {/* Floating Animation */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+      `}</style>
 
-      {/* Info Block Below Slider */}
-      <div className="mt-16 w-full px-6 md:px-20">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[900px]">
-          
-          {/* Left: Project Info */}
+      {/* Image Slider */}
+      <section className="px-6 md:px-20 mt-12">
+        <ImageSlider />
+      </section>
+
+      {/* Info Block */}
+      <section className="mt-20 px-6 md:px-20"  id="demo-section">
+        <motion.div
+          className="bg-white rounded-3xl shadow-2xl p-10 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center min-h-[800px]"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          {/* Project Info */}
           <div>
-            <h2 className="text-4xl font-bold text-blue-700 mb-4">
-              Exploring the intersection of Dermatographia Urticaria and Deep Learning:<br /> An edge-cutting approach to condition detection
+            <h2 className="text-4xl font-extrabold text-blue-700 mb-6">
+              Deep Learning + Dermatographia = UrticaScan AI
             </h2>
-            <p className="text-gray-700 text-lg mb-6">
-              Dermatographia, also known as dermographism or skin writing, is a skin condition where scratching or rubbing the skin causes raised, itchy, and sometimes painful lines. It's a type of inducible urticaria, meaning it's triggered by physical contact or pressure on the skin. The condition is common, affecting about 2% to 5% of the population, according to the National Institutes of Health (NIH). 
+            <p className="text-lg text-gray-700 mb-6 max-w-xl">
+              Dermatographia Urticaria is a unique skin response condition where friction causes raised marks. With deep learning models, we segment and classify the skin’s condition from images—ensuring fast, accurate, and intelligent diagnosis.
             </p>
-            <button
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
-              onClick={() => alert("Demo coming soon!")}
+            <motion.a
+              
+              className="bg-blue-700 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-800 transition" href="/predict"
             >
-              Demo
-            </button>
+              See Demo
+            </motion.a>
           </div>
+          
 
-          {/* Right: Images Grid */}
+          {/* Image Collage */}
           <div className="grid grid-cols-2 gap-4 relative">
-            <img
-              src="/images/s1.jpg"
-              alt="Sample 1"
-              className="w-full h-80 object-cover rounded-lg shadow-md"
-            />
-            <img
-              src="/images/s2.jpg"
-              alt="Sample 2"
-              className="w-full h-40 object-cover rounded-lg shadow-md mt-0"
-            />
-            <img
-              src="/images/s3.png"
-              alt="Sample 3"
-              className="absolute right-0 bottom-0 w-[60%] h-36 object-cover rounded-lg shadow-lg border-4 border-white"
-            />
+            <motion.img src="/images/f1.jpg" alt="Sample 1" className="w-full h-80 object-fill rounded-xl shadow-xl" whileHover={{ scale: 1.05 }} />
+            <motion.img src="/images/f2.jpg" alt="Sample 2" className="w-full h-40 object-fill rounded-xl shadow-md" whileHover={{ scale: 1.05 }} />
+            <motion.img src="/images/s3.jpg" alt="Sample 3" className="absolute right-0 bottom-0 w-[60%] h-40 object-fit rounded-xl shadow-xl border-4 border-white" whileHover={{ scale: 1.05 }} />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Flowchart */}
+      <section className="mt-20 px-6 md:px-20">
+        <motion.div
+          className="bg-white rounded-3xl shadow-2xl p-10 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img src="/src/images/flowchart.png" alt="Flowchart" className="rounded-xl shadow-xl max-w-md" />
+          <div>
+            <h2 className="text-3xl font-bold text-blue-700 mb-4">How UrticaScan AI Works</h2>
+            <p className="text-gray-700 text-lg">
+              Upload a skin image → AI classifies the image using ResNet50 → Segmentation performed by U-Net → Thresholding applied automatically → Result & treatment returned.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+
+        <section className="mt-20 px-6 md:px-20">
+          <Steps/>
+        </section>
+      {/* Footer */}
+      <footer className="bg-black text-white px-6 py-12 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">UrticaScan AI</h2>
+            <p className="text-sm text-gray-400">
+               A Deep Learning-Powered System for Accurate Detection, Segmentation, and Stage-Based Treatment Guidance of Dermatographia Urticaria and Related Skin Conditions
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Navigation</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="/" className="hover:text-white">Home</a></li>
+              <li><a href="/about" className="hover:text-white">About</a></li>
+              <li><a href="/predict" className="hover:text-white">Predict</a></li>
+              <li><a href="/team" className="hover:text-white">Team</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 space-2 ">Contact</h3>
+            <p className="text-gray-400 text-sm">
+              Email: akshraj54325@gmail.com<br />
+            </p>
+            <p className="text-gray-400 text-sm">
+              Email: nishkarsh.7078@gmail.com<br />
+            </p>
+            <p className="text-gray-400 text-sm">
+              Email: dakshguptadg3@gmail.com<br />
+            </p>
+            <br/>
+            <p className="text-gray-400 text-sm">Address: Graphic Era Hill University, Clement Town, Dehradun - 248001</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="https://in.linkedin.com/in/ankitk247" className="hover:text-white">LinkedIn</a></li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* Flowchart Section */}
-<div className="mt-16 w-full px-6 md:px-20">
-  <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    {/* Left: Flowchart Image */}
-    <div className="flex justify-center">
-      <img
-        src="../src/images/flowchart.png"  // <-- put your flowchart image in public/images/
-        alt="Project Flowchart"
-        className="w-full max-w-md object-contain rounded-lg shadow-lg"
-      />
+        <p className="text-center text-gray-500 text-sm mt-10">&copy; 2025 UrticaScan AI. All rights reserved.</p>
+      </footer>
     </div>
-
-    {/* Right: Description Text */}
-    <div>
-      <h2 className="text-4xl font-bold text-blue-700 mb-4">How UrticaScan AI Works</h2>
-      <p className="text-gray-700 text-lg">
-        Our system uses state-of-the-art deep learning techniques for image classification and segmentation to detect Dermatographia Urticaria.
-        Upload a skin image, and the AI analyzes it to provide instant detection results, along with treatment recommendations.
-      </p>
-    </div>
-  </div>
-</div>
-      <footer className="bg-black text-white mt-20 px-6 md:px-20 py-12">
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-    
-    {/* Branding */}
-    <div>
-      <h2 className="text-2xl font-bold mb-4">UrticaScan AI</h2>
-      <p className="text-sm text-gray-400">
-        Revolutionizing skin disease detection with AI-powered image analysis.
-      </p>
-    </div>
-
-    {/* Navigation */}
-    <div>
-      <h3 className="text-lg font-semibold mb-3">Navigation</h3>
-      <ul className="space-y-2 text-gray-300">
-        <li><a href="/" className="hover:text-white">Home</a></li>
-        <li><a href="/about" className="hover:text-white">About</a></li>
-        <li><a href="/predict" className="hover:text-white">Predict</a></li>
-        <li><a href="/team" className="hover:text-white">Team</a></li>
-      </ul>
-    </div>
-
-    {/* Contact */}
-    <div>
-      <h3 className="text-lg font-semibold mb-3">Contact</h3>
-      <ul className="space-y-2 text-gray-300 text-sm">
-        <li>Email: akshraj54325@gmail.com</li>
-        <li>Phone: +91 98765 43210</li>
-        <li>Address: Graphic Era Hill University, Clement Town, Dehradun - 248001</li>
-      </ul>
-    </div>
-
-    {/* Social Media */}
-    <div>
-      <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-      <ul className="space-y-2 text-gray-300">
-        <li><a href="#" className="hover:text-white">GitHub</a></li>
-        <li><a href="#" className="hover:text-white">LinkedIn</a></li>
-        <li><a href="#" className="hover:text-white">Twitter</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-    © {new Date().getFullYear()} UrticaScan AI. All rights reserved.
-  </div>
-</footer>
-    </div>
-    
   );
 }
