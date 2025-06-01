@@ -50,7 +50,7 @@ export default function Home() {
             className="flex justify-center md:justify-end"
           >
             <motion.img
-              src="/src/images/bg.png"
+              src="/images/bg.png"
               alt="AI Skin Analysis"
               className="w-[500px] md:w-[600px] xl:w-[700px] rounded-3xl "
               whileHover={{ scale: 1.03, rotate: 1 }}
