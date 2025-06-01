@@ -9,7 +9,7 @@ export default function Navbar() {
         {/* Logo and Brand */}
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="../src/images/logo.png"
+            src="../images/logo.png"
             alt="UrticaScan AI Logo"
             className="h-10 w-10 object-contain"
           />

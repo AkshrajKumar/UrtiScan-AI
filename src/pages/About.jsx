@@ -5,7 +5,7 @@ const aboutData = {
     title: "Dermatographia Urticaria",
     description:
       "Dermatographia Urticaria is a skin condition characterized by raised red lines or welts that appear after the skin is scratched or rubbed. It is a form of physical urticaria caused by an exaggerated release of histamine from skin cells. Symptoms include itching, redness, and swelling.",
-    image: "../src/images/me.jpg",
+    image: "../images/me.jpg",
   },
   diseasesCovered: {
     title: "Diseases Covered",
@@ -21,13 +21,13 @@ const aboutData = {
     title: "Classification Working",
     description:
       "The project uses deep learning models, such as ResNet50, to classify skin disease images based on extracted features. The model analyzes the uploaded images and predicts the most likely disease with confidence scores.",
-    image: "../src/images/res50.png",
+    image: "../images/res50.png",
   },
   segmentation: {
     title: "Segmentation Working",
     description:
       "Segmentation is performed to identify the affected skin areas precisely. U-Net based architectures are used to generate masks that highlight the lesion boundaries, assisting in detailed analysis and treatment planning.",
-    image: "../src/images/resunet.png",
+    image: "../images/resunet.png",
   },
   technologies: {
     title: "Technologies Used",
@@ -39,11 +39,11 @@ const aboutData = {
 
 // Disease images - update paths to your actual images in your src/images folder
 const diseaseImages = [
-  "../src/images/dermo.jpg",
-  "../src/images/warts.jpg",
-  "../src/images/psos.jpg",
-  "../src/images/eczema.jpg",
-  "../src/images/tinea.jpg",
+  "../images/dermo.jpg",
+  "../images/warts.jpg",
+  "../images/psos.jpg",
+  "../images/eczema.jpg",
+  "../images/tinea.jpg",
 ];
 
 // Disease descriptions for each item

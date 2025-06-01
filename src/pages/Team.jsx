@@ -5,19 +5,19 @@ const teamMembers = [
     id: 1,
     name: "Ankit Kumar Gola",
     role: "B.Tech CSE",
-    image: "../src/images/me.png",
+    image: "./images/me.png",
   },
   {
     id: 2,
     name: "Daksh Gupta",
     role: "B.Tech CSE",
-    image: "./src/images/daksh.jpg",
+    image: "./images/daksh.jpg",
   },
   {
     id: 3,
     name: "Nishkarsh",
     role: "B.Tech CSE",
-    image: "./src/images/nish.png",
+    image: "./images/nish.png",
   },
 ];
 
